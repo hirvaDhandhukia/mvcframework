@@ -1,5 +1,11 @@
 <?php
 
+// PageController.php
+
+// Controller/php ni andar 2 methods initiate kria ta apde, one for connection wth models and one for connection wth views; So when we 'extends' the 'Controller' class, both of those methods will be now accessible by our controllers/Pages.php also
+
+// also, inside the Core.php we defined the Pages.php as default controller and index as the default method
+
 class Pages extends Controller {
 	// Constructor
 	public function __construct() {
@@ -14,6 +20,8 @@ class Pages extends Controller {
 			'title' => 'Home page'
 			// 'users' => $users
 		];
+		// Controller class na 'view' naam na method ne call kriu aia
+		// and views file ni andar ni index file ne call karaviu
 		$this->view('pages/index', $data);
 	}
 

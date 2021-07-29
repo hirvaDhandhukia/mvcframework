@@ -1,5 +1,7 @@
 <?php
 
+// Model.php file
+
 class User {
 	private $db;
 
@@ -15,6 +17,6 @@ class User {
 		$result = $this->db->resultSet();
 		return $result;
 	} */
-
-	
 }
+
+// here, models has user (singular) and controllers has users (plural)

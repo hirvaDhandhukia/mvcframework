@@ -7,6 +7,7 @@ class Database {
 	private $dbPass = DB_PASS;
 	private $dbName = DB_NAME;
 
+	// while preparing the statement, we will use these properties below
 	private $statement;
 	private $dbHandler;
 	private $error;
@@ -19,6 +20,8 @@ class Database {
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		);
 		try {
+			// let's instanciate the PDO class
+			// PDO class ni andar p4 variables initiate krva pade. 1st is the connection, 2nd is user nane, 3rd is passsword, 4th is the $options variable which creates a persistent connection with database and states the errors inside our catch 
 			$this->dbHandler = new PDO($conn, $this->dbUser, $this->dbPass, $options);
 		} catch (PDOException $e) {
 			$this->error = $e->getMessage();

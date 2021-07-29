@@ -1,12 +1,14 @@
 <?php
 
-// load the model and the view
+// here we initialize every class (every file) that is inside the 'controllers' folder
+
+// loading the models and the views
 class Controller {
 	public function model($model) {
 		// require mode file
 		require_once '../app/models/' . $model . '.php';
 
-		// instantiate model
+		// instantiate a model
 		return new $model();
 	}
 
@@ -15,7 +17,7 @@ class Controller {
 		if (file_exists('../app/views/' . $view . '.php')) {
 			require_once '../app/views/' . $view . '.php';
 		} else {
-			die("View does not exists.");
+			die("View/Page does not exists.");
 		}
 	}
 }

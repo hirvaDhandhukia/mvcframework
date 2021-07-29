@@ -1,4 +1,5 @@
 <?php
+// BaseController.php file
 
 // this page will take care of the flow of our application
 // it gathers all the necessary data from the models and it will assign it to the view

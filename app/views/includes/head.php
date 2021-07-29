@@ -13,3 +13,4 @@
 </head>
 <body>
 
+<!-- This is partial html file for layout header and contains theme header info -->
