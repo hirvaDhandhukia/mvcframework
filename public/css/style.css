@@ -79,8 +79,8 @@ html, body {
 .navbar {
 	width: 100%;
 	height: 70px;
-	background-color: #1a1a1a;
-	box-shadow: 0px 0px 10px #1a1a1a;
+	background-color: #374151;
+	/* box-shadow: 0px 0px 10px #BFDBFE; */
 }
 
 .container-login {
@@ -97,31 +97,35 @@ html, body {
 }
 
 .wrapper-login input {
-	width: 200px;
-	height: 26px;
+	width: 256px;
+	height: 32px;
 	border: 1px solid #cccccc;
 	background-color: #f5f5f5;
 	font-size: 18px;
 	display: block;
 	position: relative;
 	margin: 20px auto;
+	border-radius: 3px;
 }
 
 input::placeholder {
 	color: #a1a1a1;
-	font-size: 14px;
+	font-size: 16px;
+	padding-left: 5px;
 }
 
 .wrapper-login h2 {
-	font-size: 40px;
+	font-size: 38px;
+	color:#374151;
 	text-transform: uppercase;
 }
 
 #submit {
 	width: 200px;
 	height: 42px;
-	border: 1px solid #000000;
-	background-color: #000000;
+	border: 1px solid #374151;
+	border-radius: 3px;
+	background-color: #374151;
 	color: #ffffff;
 	font-size: 20px;
 	margin: 20px 0 0 0;
@@ -143,3 +147,5 @@ input::placeholder {
 .invalidFeedback {
 	color: #ff0000;
 }
+
+/* #111827 */

@@ -26,7 +26,7 @@ require APPROOT . '/views/includes/head.php';
 
 			<button id="submit" type="submit" value="submit">Submit</button>
 
-			<p class="options">Don't have an account? <a href="<?php URLROOT?>/mvcframework/users/register">Signup here</a> </p>
+			<p class="options">Don't have an account? <a href="<?php echo URLROOT; ?>/users/register">Signup here</a> </p>
 		</form>
 	</div>
 </div>
