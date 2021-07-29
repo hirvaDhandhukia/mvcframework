@@ -7,6 +7,7 @@
 class Users extends Controller {
 	// constructor
 	public function __construct() {
+		// creating a connection to database
 		$this->userModel = $this->model('User');
 	}
 

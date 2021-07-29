@@ -10,7 +10,7 @@ define('DB_NAME', 'mvcframework');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URLROOT (Dynamic links)
-define('URLROOT', 'localhost/mvcframework');
+define('URLROOT', 'http://localhost/mvcframework');
 
 // Sitename
 define('SITENAME', 'MVC Framework');

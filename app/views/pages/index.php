@@ -15,7 +15,6 @@ require APPROOT . '/views/includes/head.php';
 require APPROOT . '/views/includes/navigation.php';
 ?>
 
-
 <div class="wrapper-landing">
 	<h1>Find your favourite E-books here</h1>
 	<h2>Login to purchase</h2>
