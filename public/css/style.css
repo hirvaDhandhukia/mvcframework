@@ -1,3 +1,8 @@
+:root {
+	--grey: #374151;
+	--darkerGrey: #282A35;
+}
+
 html, body {
 	height: 100%;
 	width: 100%;
@@ -78,8 +83,8 @@ html, body {
 /* ----------login page----------*/
 .navbar {
 	width: 100%;
-	height: 70px;
-	background-color: #374151;
+	height: 68px;
+	background-color: var(--darkerGrey);
 	/* box-shadow: 0px 0px 10px #BFDBFE; */
 }
 
@@ -100,7 +105,7 @@ html, body {
 	width: 256px;
 	height: 32px;
 	border: 1px solid #cccccc;
-	background-color: #f5f5f5;
+	background-color: #F8FAFC;
 	font-size: 18px;
 	display: block;
 	position: relative;
@@ -123,9 +128,9 @@ input::placeholder {
 #submit {
 	width: 200px;
 	height: 42px;
-	border: 1px solid #374151;
+	border: 1px solid var(--darkerGrey);
 	border-radius: 3px;
-	background-color: #374151;
+	background-color: var(--darkerGrey);
 	color: #ffffff;
 	font-size: 20px;
 	margin: 20px 0 0 0;
@@ -147,5 +152,3 @@ input::placeholder {
 .invalidFeedback {
 	color: #ff0000;
 }
-
-/* #111827 */

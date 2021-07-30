@@ -35,7 +35,7 @@ require APPROOT . '/views/includes/head.php';
 
 			<button id="submit" type="submit" value="submit">Submit</button>
 
-			<p class="options">Already have an account? <a href="<?php URLROOT?>/users/register">Signin here</a> </p>
+			<p class="options">Already have an account? <a href="<?php echo URLROOT; ?>/users/login">Signin here</a> </p>
 		</form>
 	</div>
 </div>
