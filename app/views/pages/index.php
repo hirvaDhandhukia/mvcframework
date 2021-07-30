@@ -1,5 +1,6 @@
 <?php
 
+var_dump($_SESSION);
 // this is html file page details
 
 // var_dump($data);

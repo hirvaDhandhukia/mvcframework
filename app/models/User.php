@@ -27,6 +27,24 @@ class User {
 		}
 	}
 
+	// to login a user inside the website
+	public function login($username, $password) {
+		// using a prepared statement 
+		$this->db->query('SELECT * FROM users WHERE username = :username');
+
+		// binding the value
+		$this->db->bind(':username', $username);
+		
+		$row = $this->db->single();
+
+		$hashdPassword = $row->password;
+		if(password_verify($password, $hashdPassword)) {
+			return $row;
+		} else {
+			return false;
+		}
+	}
+
 	// Finding the user by email. Email is passed in by the controller
 	public function findUserByEmail($email) {
 		// Prepared statement

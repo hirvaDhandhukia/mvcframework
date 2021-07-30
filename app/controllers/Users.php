@@ -119,20 +119,18 @@ class Users extends Controller {
 		if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			// Sanitize post data
 			$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-		
 
 		$data = [
 			'username' => trim($_POST['username']),
 			'password' => trim($_POST['password']),
 			'usernameError' => '',
-			'passwordError' => '',
+			'passwordError' => ''
 		];
 
 		// validate the username
 		if (empty($data['username'])) {
 			$data['usernameError'] = 'Please enter a username.';
 		}
-
 		//Validate password
 		if (empty($data['password'])) {
 			$data['passwordError'] = 'Please enter a password.';
@@ -166,7 +164,7 @@ class Users extends Controller {
 		$_SESSION['user_id'] = $user->id;
 		$_SESSION['username'] = $user->username;
 		$_SESSION['email'] = $user->email;
-		header('location: '. URLROOT . '/pages/index');
+		header('location: '. URLROOT . '/pages/index?login=success');
 	}
 
 	public function logout() {

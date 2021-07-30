@@ -12,7 +12,7 @@ require APPROOT . '/views/includes/head.php';
 	<div class="wrapper-login">
 		<h2>Sign up</h2>
 
-		<form action="<?php echo URLROOT; ?>/users/register" method="post">
+		<form action="<?php echo URLROOT; ?>/users/register" method="post" id="register-form">
 			<input type="text" placeholder="Username" name="username">
 			<span class="invalidFeedback">
 				<?php echo $data['usernameError']; ?>
