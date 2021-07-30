@@ -10,6 +10,40 @@ class User {
 		$this->db = new Database;
 	}
 
+	// to register a new user inside the database
+	public function register($data) {
+		$this->db->query('INSERT INTO users (username, email, password) VALUE (:username, :email, :password)');
+
+		// now bind the values
+		$this->db->bind(':username', $data['username']);
+		$this->db->bind(':email', $data['email']);
+		$this->db->bind(':password', $data['password']);
+
+		// now execute the function\
+		if($this->db->execute()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	// Finding the user by email. Email is passed in by the controller
+	public function findUserByEmail($email) {
+		// Prepared statement
+		$this->db->query('SELECT * FROM users WHERE email :email');
+
+		// email param will be binded with the email variable
+		$this->db->bind(':email', $email);
+
+		// check if email is already registered
+		// Database.php ma already ek method named rowCount che. here we are using the same method 
+		if($this->db->rowCount() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	// Methods
 	/* Test
 	public function getUsers() {

@@ -40,8 +40,10 @@ class Users extends Controller {
 				'confirmPasswordError' => ''
 			];
 
+			// regex for validation
+			// will use the preg_match function to validate
 			$nameValidation = "/^[a-zA-Z0-9]*$/";
-			$passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
+			$passwordValidation = "/^(.{0,3}|[^a-z]*|[^\d]*)$/i";
 
 			// Validate username on letters/numbers
 			if(empty($data['username'])) {
@@ -50,19 +52,21 @@ class Users extends Controller {
 				$data['usernameError'] = 'Name can only contain letters and numbers';
 			}
 
-			// Validaton of email
+			// Validaton of email by checking syntax of email
 			if(empty($data['email'])) {
 				$data['emailError'] = 'Please enter email address.';
 			} elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
 				$data['emailError'] = 'Please enter a correct format of email';
 			} else {
-				// Check if email exists
+				// Check if email already exists inside database
+				// the method findUserByEmail is checked inside models/User.php
 				if($this->userModel->findUserByEmail($data['email'])) {
 					$data['emailError'] = 'Email is already taken.';
 				}
 			}
 
 			// Validation password 
+			// checking length and numeric values 
 			if(empty($data['password'])) {
 				$data['passwordError'] = 'Please enter password.';
 			} elseif (strlen($data['password']) < 4) {
@@ -88,6 +92,7 @@ class Users extends Controller {
 				$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
 				// Register the user from model function
+				// function 'register' used here is inside the model/User.php 
 				if($this->userModel->register($data)) {
 					// redirect to login page
 					header('location: ' . URLROOT . '/users/login');
