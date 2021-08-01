@@ -1,6 +1,5 @@
 <?php
-
-var_dump($_SESSION);
+// var_dump($_SESSION);
 // this is html file page details
 
 // var_dump($data);
@@ -13,13 +12,23 @@ var_dump($_SESSION);
 <div id="section-landing">
 <?php
 require APPROOT . '/views/includes/head.php';
-require APPROOT . '/views/includes/navigation.php';
 ?>
-
-<div class="wrapper-landing">
-	<h1>Find your favourite E-books here</h1>
-	<h2>Login to purchase</h2>
-	<!-- eat sleep read repeat -->
+<div class="navbar">
+	<?php
+		require APPROOT . '/views/includes/navigation.php';
+	?>
 </div>
+
+<?php if(isset($_SESSION['user_id'])) : ?>
+	<div class="wrapper-landing">
+		<h1>buy</h1>
+	</div>
+<?php else : ?>
+	<div class="wrapper-landing">
+		<h1>Find your favourite E-books here</h1>
+		<h2>Login to purchase</h2>
+		<!-- eat sleep read repeat -->
+	</div>
+<?php endif; ?>
 
 </div>

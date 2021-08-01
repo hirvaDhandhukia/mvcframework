@@ -24,7 +24,7 @@ html, body {
 	padding: 0;
 	position: absolute;
 	right: 6%;
-	top: 2%;
+	/* top: 2%; */
 }
 
 .top-nav ul li {
@@ -43,32 +43,33 @@ html, body {
 	transition: 0.15s ease-in;
 }
 
+/* 
 #section-landing {
 	background: url('../img/bulb.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 100%;
-	width: 100%;
-}
+	width: 100%; 
+} */
 
 .wrapper-landing {
 	position: relative;
 	text-align: center;
 	margin: 0 auto;
 	top: 40%;
-	text-shadow: 2px 2px 8px black;
+	/* text-shadow: 2px 2px 8px black; */
 }
 
 .wrapper-landing h1 {
-	font-size: 48px;
-	color: #ffffff;
+	font-size: 36px;
+	color: #000000;
 	margin: 0;
 	font-weight: 100;
 }
 .wrapper-landing h2 {
-	font-size: 42px;
-	color: #f2f2f2;
+	font-size: 30px;
+	color: #000000;
 	opacity: 0.6;
 	margin: 0;
 	font-weight: 100;

@@ -8,6 +8,10 @@ require APPROOT . '/views/includes/head.php';
 	?>
 </div>
 
+<?php
+// var_dump($_SESSION);
+?>
+
 <!-- the first div will be the full width (100%) and the wrapper will be at 80% inside the full width -->
 <div class="container-login">
 	<div class="wrapper-login">
