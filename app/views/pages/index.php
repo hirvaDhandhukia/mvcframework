@@ -19,9 +19,11 @@ require APPROOT . '/views/includes/head.php';
 	?>
 </div>
 
-<?php if(isset($_SESSION['user_id'])) : ?>
-	<div class="wrapper-landing">
-		<h1>buy</h1>
+<?php if(isLoggedIn()) : ?>
+	<div class="wrapper-loggedin">
+		<h2>You are logged in!</h2>
+		<h3>Buy Here:</h3>
+		<hr size=0>
 	</div>
 <?php else : ?>
 	<div class="wrapper-landing">

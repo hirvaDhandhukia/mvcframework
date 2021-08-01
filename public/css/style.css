@@ -24,7 +24,7 @@ html, body {
 	padding: 0;
 	position: absolute;
 	right: 6%;
-	/* top: 2%; */
+	top: 2%;
 }
 
 .top-nav ul li {
@@ -55,9 +55,10 @@ html, body {
 
 .wrapper-landing {
 	position: relative;
-	text-align: center;
-	margin: 0 auto;
-	top: 40%;
+	/* text-align: center; */
+	width: 80%;
+	/* margin: 0 auto; */
+	top: 60%;
 	/* text-shadow: 2px 2px 8px black; */
 }
 
@@ -80,6 +81,20 @@ html, body {
 	padding: 6px 24px;
 	border-radius: 3px;
 }
+
+.wrapper-loggedin h1 {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	top: 40%;
+	font-size: 36px;
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	/* font-weight: 100; */
+	/* text-shadow: 2px 2px 8px black; */
+}
+
 
 /* ----------login page----------*/
 .navbar {
