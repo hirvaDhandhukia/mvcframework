@@ -13,6 +13,23 @@ html, body {
 	font-family: 'Lato', sans-serif;
 }
 
+h2 {
+	font-size: 50px;
+	margin: 0;
+}
+
+h3 {
+	font-size: 14px;
+	color: #696969;
+	font-weight: 100;
+	font-style: italic;
+}
+
+p {
+	font-size: 18px;
+	color: #666;
+}
+
 /* ----------Home page---------- */
 
 .top-nav {
@@ -55,7 +72,7 @@ html, body {
 
 .wrapper-landing {
 	position: relative;
-	/* text-align: center; */
+	text-align: left;
 	width: 80%;
 	/* margin: 0 auto; */
 	top: 60%;
@@ -167,4 +184,16 @@ input::placeholder {
 
 .invalidFeedback {
 	color: #ff0000;
+}
+
+/* Books */
+.container-book {
+	margin: 0 auto;
+	width: 80%;
+	padding: 100px 0px;
+}
+
+.container-item-book {
+	border-bottom: 1px solid #dcdcdc;
+	padding: 40px 0px;
 }
