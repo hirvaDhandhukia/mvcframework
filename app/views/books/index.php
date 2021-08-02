@@ -8,6 +8,11 @@ require APPROOT . '/views/includes/head.php';
 </div>
 
 <div class="container-book">
+    <?php if(isLoggedIn()): ?>
+        <a class="btn green" href="<?php echo URLROOT; ?>/books/create">
+            Create
+        </a>
+    <?php endif; ?>
     <?php foreach($data['books'] as $book): ?>
         <div class="container-item-book">
             <h2>

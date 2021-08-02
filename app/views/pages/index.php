@@ -19,10 +19,11 @@ require APPROOT . '/views/includes/head.php';
 	?>
 </div>
 
+<div class="container">
 <?php if(isLoggedIn()) : ?>
 	<div class="wrapper-loggedin">
-		<h2>You are logged in!</h2>
-		<h3>Buy Here:</h3>
+		<p>You are logged in!</p>
+		<p><a href="<?php echo URLROOT ?>/books">Click Here</a> to see list of books</p>
 		<hr size=0>
 	</div>
 <?php else : ?>
@@ -32,5 +33,6 @@ require APPROOT . '/views/includes/head.php';
 		<!-- eat sleep read repeat -->
 	</div>
 <?php endif; ?>
+</div>
 
 </div>

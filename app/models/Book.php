@@ -17,4 +17,20 @@ class Book {
 
         return $results;
     }
+
+    public function addBook($data) {
+        $this->db->query('INSERT INTO books (user_id, title, body, price) VALUES (:user_id, :title, :body :price)');
+
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':price', $data['price']);
+
+        // after binding the params, we need to execute this
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

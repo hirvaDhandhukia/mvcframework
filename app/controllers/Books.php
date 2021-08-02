@@ -17,4 +17,59 @@ class Books extends Controller {
         ];
         $this->view('books/index', $data);
     }
+
+    public function create() {
+        if(!isLoggedIn()) {
+            header("Location: " . URLROOT . "/books");
+        }
+        $data = [
+            'title' => '',
+            'body' => '',
+            'price' => '',
+            'titleError' => '',
+            'bodyError' => '',
+            'priceError' => ''
+        ];
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // we now sanitize the form data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'user_id' => $_SESSION['user_id'],
+                'title' => trim($_POST['title']),
+                'body' => trim($_POST['body']),
+                'price' => trim($_POST['price']),
+                'titleError' => '',
+                'bodyError' => '',
+                'priceError' => ''
+            ];
+            // var_dump($data['body']);
+
+            if(empty($_data['title'])) {
+                $data['titleError'] = 'Title of a book cannot be empty';
+            }
+            if(empty($_data['body'])) {
+                $data['bodyError'] = 'Description of a book cannot be empty';
+            }
+
+            if(empty($data['titleError']) && empty($data['bodyError']) && empty($data['priceError'])) {
+                if($this->bookModel->addBook($data)) {
+                    header("Location: " . URLROOT . "/books");
+                } else {
+                    die("Something went wrong. Try again");
+                }
+            } else {
+                $this->view('books/create', $data);
+            }
+        }
+        $this->view('books/create', $data);
+    }
+
+    public function update() {
+
+    }
+
+    public function delete() {
+
+    }
 }

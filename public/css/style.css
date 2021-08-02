@@ -11,6 +11,11 @@ html, body {
 	top: 0;
 	bottom: 0;
 	font-family: 'Lato', sans-serif;
+	background-color: #f2f2f2;
+}
+
+a {
+	text-decoration: none;
 }
 
 h2 {
@@ -31,6 +36,10 @@ p {
 }
 
 /* ----------Home page---------- */
+.container {
+	width: 80%;
+	padding: 5px 5px;
+}
 
 .top-nav {
 	display: block;
@@ -196,4 +205,47 @@ input::placeholder {
 .container-item-book {
 	border-bottom: 1px solid #dcdcdc;
 	padding: 40px 0px;
+	width: 50%;
+}
+
+.btn {
+	padding: 8px 18px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+.btn:hover {
+	color: #ffffff;
+}
+
+.green {
+	background-color: #4CAF50;
+}
+.green:hover {
+	background-color: #64A764;
+	transition: 0.2s ease-in-out;
+}
+
+/* create new book */
+input, textarea {
+	width: 400px;
+	margin: 20px 0px;
+	border: 1px solid #cbcbcb;
+	border-radius: 4px;
+	background-color: #f5f5f5;
+	padding: 8px;
+	font-size: 18px;
+	color: #666;
+}
+input {
+	height: 35px;
+}
+textarea {
+	height: 100px;
+}
+
+::placeholder {
+	font-size: 14px;
+	font-weight: 100;
+	font-style: italic;
 }
