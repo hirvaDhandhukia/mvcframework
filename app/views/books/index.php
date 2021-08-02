@@ -15,6 +15,12 @@ require APPROOT . '/views/includes/head.php';
     <?php endif; ?>
     <?php foreach($data['books'] as $book): ?>
         <div class="container-item-book">
+            <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $book->user_id): ?>
+                <a class="btn orange" 
+                href="<?php echo URLROOT . "/books/update/" . $book->id ?>">
+                    Update/Edit
+                </a>
+            <?php endif; ?>
             <h2>
                 <?php echo $book->title; ?>
             </h2>

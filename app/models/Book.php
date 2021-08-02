@@ -33,4 +33,28 @@ class Book {
             return false;
         }
     }
+
+    public function findBookById($id) {
+        $this->db->query('SELECT * FROM books WHERE id = :id');
+
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+        return $row;
+    }
+
+    public function updateBook($data) {
+        $this->db->query('UPDATE books SET title = :title, body = :body, price = :price WHERE id = :id');
+
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+        $this->db->bind(':price', $data['price']);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

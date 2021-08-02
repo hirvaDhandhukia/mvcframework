@@ -205,7 +205,6 @@ input::placeholder {
 .container-item-book {
 	border-bottom: 1px solid #dcdcdc;
 	padding: 40px 0px;
-	width: 50%;
 }
 
 .btn {
@@ -248,4 +247,10 @@ textarea {
 	font-size: 14px;
 	font-weight: 100;
 	/* font-style: italic; */
+}
+
+.orange {
+	background-color: orange;
+	color: #000000;
+	float: right;
 }
