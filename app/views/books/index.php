@@ -20,6 +20,9 @@ require APPROOT . '/views/includes/head.php';
                 href="<?php echo URLROOT . "/books/update/" . $book->id ?>">
                     Update/Edit
                 </a>
+                <form action="<?php echo URLROOT . "/books/delete/" . $book->id ?>" method="post">
+                    <input type="submit" name="delete" value="Delete" class="btn red">
+                </form>
             <?php endif; ?>
             <h2>
                 <?php echo $book->title; ?>

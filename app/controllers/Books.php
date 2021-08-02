@@ -134,7 +134,35 @@ class Books extends Controller {
         $this->view('books/update', $data);
     }
 
-    public function delete() {
+    public function delete($id) {
+        $book = $this->bookModel->findBookById($id);
+        // var_dump($book);
 
+        if(!isLoggedIn()) {
+            // this /books is to show that a user can edit only his posts
+            header("Location: " . URLROOT . "/books");
+        } elseif ($book->user_id != $_SESSION['user_id']) {
+            header("Location: " . URLROOT . "/books");
+        }
+
+        $data = [
+            'book' => $book,
+            'title' => '',
+            'body' => '',
+            'price' => '',
+            'titleError' => '',
+            'bodyError' => '',
+            'priceError' => ''
+        ];
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            if($this->bookModel->deleteBook($id)) {
+                header("Location: " . URLROOT . "/books");
+            } else {
+                die("Error occured");
+            }
+        }
     }
 }
