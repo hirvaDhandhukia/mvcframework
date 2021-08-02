@@ -31,6 +31,7 @@ class Books extends Controller {
             'priceError' => ''
         ];
 
+        // checking if the server request method is post or not
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             // we now sanitize the form data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -45,10 +46,10 @@ class Books extends Controller {
             ];
             // var_dump($data['body']);
 
-            if(empty($_data['title'])) {
+            if(empty($data['title'])) {
                 $data['titleError'] = 'Title of a book cannot be empty';
             }
-            if(empty($_data['body'])) {
+            if(empty($data['body'])) {
                 $data['bodyError'] = 'Description of a book cannot be empty';
             }
 

@@ -19,7 +19,7 @@ class Book {
     }
 
     public function addBook($data) {
-        $this->db->query('INSERT INTO books (user_id, title, body, price) VALUES (:user_id, :title, :body :price)');
+        $this->db->query('INSERT INTO books (user_id, title, body, price) VALUES (:user_id, :title, :body, :price)');
 
         $this->db->bind(':user_id', $data['user_id']);
         $this->db->bind(':title', $data['title']);
