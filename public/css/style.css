@@ -255,7 +255,14 @@ textarea {
 	float: right;
 }
 .red {
+	width: fit-content;
 	background-color: #ff0000;
+	margin: 0px 20px;
+	float: right;
+}
+.blue {
+	width: fit-content;
+	background-color: #1D4ED8;
 	margin: 0px 20px;
 	float: right;
 }

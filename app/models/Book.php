@@ -69,4 +69,18 @@ class Book {
             return false;
         }
     }
+
+    public function purchaseBook($data) {
+        $this->db->query('INSERT INTO purchase (user_id, book) VALUES (:user_id, :book)');
+
+        $this->db->bind(':user_id', $data['user_id']);
+        $this->db->bind(':book', $data['book']);
+
+        // after binding the params, we need to execute this
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

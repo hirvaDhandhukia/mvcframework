@@ -165,4 +165,35 @@ class Books extends Controller {
             }
         }
     }
+
+    public function purchase($id) {
+        // echo "hi";
+        $book = $this->bookModel->findBookById($id);
+
+        if(!isLoggedIn()) {
+            header("Location: " . URLROOT . "/books");
+        }
+        $data = [
+            'book' => $book,
+            'user_id' => ''
+        ];
+
+        // checking if the server request method is post or not
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // we now sanitize the form data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $data = [
+                'user_id' => $_SESSION['user_id'],
+                'book' => $id
+            ];
+            // var_dump($data['book']);
+
+            if($this->bookModel->purchaseBook($data)) {
+                header("Location: " . URLROOT . "/books");
+            } else {
+                die("Error occured");
+            }
+        }
+        // $this->view('books/create', $data);
+    }
 }
